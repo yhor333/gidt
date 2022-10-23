@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { store } from "./store/store";
 import { Provider } from "react-redux";
 import BasketPage from "./pages/BasketPage/BasketPage";
+import Product from "./components/Product/Product";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,7 +16,9 @@ root.render(
       <BrowserRouter>
         <Routes>
           <Route path={"/"} element={<App />}></Route>
-          <Route path={"/basket"} element={<BasketPage />}></Route>
+          <Route path={"/:id/basket"} element={<BasketPage />}></Route>
+          <Route path={"basket"} element={<BasketPage />}></Route>
+          <Route path="/:id" element={<Product />} />
         </Routes>
       </BrowserRouter>
     </Provider>

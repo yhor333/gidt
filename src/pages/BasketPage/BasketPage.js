@@ -101,6 +101,7 @@ const BasketPage = () => {
             </label>
           </div>
           <div className="clendar-wrapper">
+            <p>Select date of receiving</p>
             <Calendar onChange={onChange} value={value} minDate={minvalue} />
           </div>
         </form>

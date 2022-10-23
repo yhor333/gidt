@@ -1,38 +1,11 @@
 import "./App.css";
 import SvgBasket from "./components/SvgBasket/SvgBasket";
 import ProductCart from "./components/ProductCart/ProductCart";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function App() {
-  const products = [
-    {
-      name: "socks",
-      url: "http://sc04.alicdn.com/kf/H700cae71382b41d2ae06dfb7dc86b551t.png",
-      price: 14.6,
-      description: "socks high quality",
-      id: 1,
-    },
-    {
-      name: "razor",
-      url: "https://pyxis.nymag.com/v1/imgs/0f9/3e1/a728337cf996524d17bc475956434912c4-merkur-34c.jpg",
-      price: 6,
-      description: "razor high quality",
-      id: 2,
-    },
-    {
-      name: "Shaving cream",
-      url: "https://u.makeup.com.ua/6/69/69hhggiynvhu.png",
-      price: 7,
-      description: "Shaving cream high quality",
-      id: 3,
-    },
-    {
-      name: "Birthday cake",
-      url: "https://food-images.files.bbci.co.uk/food/recipes/rainbow_cake_20402_16x9.jpg",
-      price: 8,
-      description: "Birthday cake high quality",
-      id: 4,
-    },
-  ];
+  const products = useSelector((state) => state.shop.products);
 
   return (
     <div>
@@ -43,16 +16,17 @@ function App() {
       <main className="container">
         {products.map((product) => {
           return (
-            <ProductCart
-              key={product.name + product.id}
-              name={product.name}
-              price={product.price}
-              url={product.url}
-              description={product.description}
-              id={product.id}
-              product={product}
-              isAdded={false}
-            />
+            <Link to={`${product.id}`} key={product.name + product.id}>
+              <ProductCart
+                name={product.name}
+                price={product.price}
+                url={product.url}
+                description={product.description}
+                id={product.id}
+                product={product}
+                isAdded={true}
+              />
+            </Link>
           );
         })}
       </main>

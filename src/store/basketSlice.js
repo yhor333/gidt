@@ -9,8 +9,6 @@ export const basketSlice = createSlice({
   initialState,
   reducers: {
     addProdut: (state, action) => {
-      console.log(state);
-      console.log(action);
       state.products.push(action.payload);
     },
   },
