@@ -1,0 +1,36 @@
+.product-cart {
+  display: flex;
+  min-width: 250px;
+  max-height: 200px;
+  box-sizing: border-box;
+  flex-direction: column;
+}
+
+.img-wrapper {
+  margin: 0 auto;
+  height: 140px;
+  box-sizing: border-box;
+}
+
+.img-wrapper img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.description {
+  text-align: center;
+  width: 100%;
+}
+
+.button {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 13px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.success {
+  color: rgb(55, 223, 14);
+  border-color: rgb(55, 223, 14);
+}
