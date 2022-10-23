@@ -63,3 +63,7 @@ input:checked + .label-radio > img {
 .clendar-wrapper {
   margin-bottom: 50px;
 }
+
+.added-product-wrapper {
+  width: 25%;
+}

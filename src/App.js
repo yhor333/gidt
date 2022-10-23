@@ -16,17 +16,19 @@ function App() {
       <main className="container">
         {products.map((product) => {
           return (
-            <Link to={`${product.id}`} key={product.name + product.id}>
-              <ProductCart
-                name={product.name}
-                price={product.price}
-                url={product.url}
-                description={product.description}
-                id={product.id}
-                product={product}
-                isAdded={true}
-              />
-            </Link>
+            <div className="product-cart-wrapper">
+              <Link to={`${product.id}`} key={product.name + product.id}>
+                <ProductCart
+                  name={product.name}
+                  price={product.price}
+                  url={product.url}
+                  description={product.description}
+                  id={product.id}
+                  product={product}
+                  isAdded={true}
+                />
+              </Link>
+            </div>
           );
         })}
       </main>

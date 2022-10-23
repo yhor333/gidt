@@ -60,17 +60,19 @@ const BasketPage = () => {
           <h4>Added products: </h4>
           {addedProducts.map((product, index) => {
             return (
-              <li key={index}>
-                <ProductCart
-                  name={product.name}
-                  price={product.price}
-                  url={product.url}
-                  description={product.description}
-                  id={product.id}
-                  product={product}
-                  isAdded={true}
-                />
-              </li>
+              <div className="added-product-wrapper">
+                <li key={index}>
+                  <ProductCart
+                    name={product.name}
+                    price={product.price}
+                    url={product.url}
+                    description={product.description}
+                    id={product.id}
+                    product={product}
+                    isAdded={true}
+                  />
+                </li>
+              </div>
             );
           })}
         </ul>
